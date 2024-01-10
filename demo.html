@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="demo.css" />
+    <title>demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"
+      integrity="sha512-pVCM5+SN2+qwj36KonHToF2p1oIvoU3bsqxphdOIWMYmgr4ZqD3t5DjKvvetKhXGc/ZG5REYTT6ltKfExEei/Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div id="dashboard">
+        <div class="card p-4">
+          <div class="row align-items-center">
+            <div class="col-4">
+              <h5 class="m-0">Task management</h5>
+            </div>
+            <div class="col-8 d-flex justify-content-end">
+              <button class="btn-export me-3 mt-0" onclick="exportTasks()">
+                <i class="bx bx-export me-2"></i>Export<i
+                  class="bx bx-chevron-down ms-2"
+                ></i>
+              </button>
+              <button class="btn-newtask mt-0 me-3" onclick="showNewTaskForm()">
+                <i class="bx bx-plus me-2"></i>New Task
+              </button>
+              <button
+                class="btn-remove mt-0 me-3"
+                onclick="removeSelectedTasks()"
+              >
+                <i class="bx bx-trash me-2"></i>Remove Task
+              </button>
+            </div>
+            <div class="row mt-4">
+              <div class="col-12 d-flex justify-content-end p-1">
+                <input type="search" id="taskSearch" />
+              </div>
+            </div>
+          </div>
+
+          <div id="newTaskForm" class="form-container">
+            <div class="card">
+              <div class="card-header">
+                <h6>Create Task</h6>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8">
+                    <form id="taskForm">
+                      <div class="mt-4 w-100 gap-4">
+                        <label for="task"  >Task Name<b>*</b> </label>
+                        <input type="text" id="task" required   />
+                      </div>
+                      <div  class="mt-4 w-100 gap-4">
+    
+                       <label for="story">Type</label>
+                       <select id="story" required>
+                        <option value="none" selected disabled hidden>select a option</option>
+                        <option value="story">story</option>
+                        <option value="bug">bug</option>
+                        
+                      </select>
+    
+                      </div>
+                      <div class="mt-4 w-100">
+                        <label for="assignee">Assignee <b>*</b></label>
+                        <select id="assignee" required>
+                          <option value="none" selected disabled hidden>select a option</option>
+                          <option value="employee1">employee1</option>
+                          <option value="employee2">employee2</option>
+                          <option value="employee3">employee3</option>
+                          <option value="employee4">employee4</option>
+                        </select>
+                      </div>
+    
+                      <div class="mt-4 w-100 d-flex">
+                        <label for="inputPassword6"
+                          > Comments</label>
+                          <textarea
+                          class="form-control input-color"
+                          placeholder="Typenote"
+                          id="comments"
+                        ></textarea>
+                      </div>
+                      
+                     
+                      <div class="mt-4 w-100">
+                        <label for="start_date">Start Date:</label>
+                        <input type="date"  id="start_date" required />
+                      </div>
+                      <div class="mt-4 w-100">
+                        <label for="end_date">End Date:</label>
+                        <input type="date" id="end_date" required />
+                      </div>
+                     
+                   
+                    </form>
+                  </div>
+                  <div class="col-4 border_left">
+                    <div class="form-check form-switch d-flex align-items-center ps-3">
+                      <label class="form-check-label label_wid" for="flexSwitchCheckChecked"
+                        >Close Issue</label
+                      >
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        role="switch"
+                        id="closeissue"
+                        checked
+                      />
+                    </div>
+                    <div class="mt-4 w-100 ms-3">
+                      <label for="spend_time"  class="label_wid">Spend Time:</label>
+                      <input type="number" id="spend_time" required />
+                    </div>
+                    <div class="mt-4 w-100 ms-3">
+                      <label for="status" class="label_wid">Status:</label>
+                      <select id="status" required>
+                        
+                        <option value="progress" >
+                         Progress
+                        </option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                        <option value="open">Open</option>
+                      </select>
+                    </div>
+                    <div class="mt-4 w-100 ms-3">
+                      <label for="priority"  class="label_wid">Priority:</label>
+                      <select id="priority" required>
+                        <option value="high" id="high">High</option>
+                        <option value="medium" id="medium">Medium</option>
+                        <option value="low" id="low">Low</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="card-footer w-100 mt-4">
+                    <div
+                      class="d-flex align-items-center justify-content-center gap-3"
+                    >
+                      <button type="button" onclick="submitTask()" id="submit">
+                        Submit
+                      </button>
+                      <button type="button" onclick="cancelForm()" id="cancel">
+                        cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <table class="table m-0" id="taskTable">
+                <thead>
+                  <tr>
+                    <th scope="col"># <i class="bx bx-up-arrow-alt"></i></th>
+                    <th scope="col">TASK</th>
+                    <th scope="col">ASSIGNEE</th>
+                    <th scope="col">PRIORITY</th>
+                    <th scope="col">START DATE</th>
+                    <th scope="col">END DATE</th>
+                    <th scope="col">SPEND TIME</th>
+                    <th scope="col">STATUS</th>
+                  </tr>
+                </thead>
+                <tbody id="taskList"></tbody>
+            
+              </table>
+
+              <div class="row p-4">
+                <div class="col-6">
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">4</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">5</a>
+                      </li>
+
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="col-6">
+                  <div
+                    class="d-flex align-items-center justify-content-end gap-3"
+                  >
+                    <select name="" id="">
+                      <option value="10">10</option>
+                    </select>
+                    <p class="m-0">showing 1-10 of 350</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="demo.js"></script>
+   

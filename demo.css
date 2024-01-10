@@ -1,0 +1,226 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin: 20px;
+    max-width: 1200px
+}
+
+#dashboard {
+    margin-bottom: 10px;
+}
+
+.form-container {
+    display: none;
+    margin: 20px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+form label{
+        width: 30%;
+        text-align: right;
+}
+form input,form select{
+    width:36%;
+    margin-left:38px;
+}
+button {
+    margin-top: 10px;
+}
+
+table {
+    margin: 20px;
+    border-collapse: collapse;
+    width:83%;
+    color: rgb(126, 35, 35);
+}
+
+th, td {
+    border: 1px solid #c9c6c6;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #eeeeee;
+}
+button{
+    border: none;
+    border-radius: 4px;
+    padding:8px 16px;
+    }
+    .btn-newtask,.btn-export{
+    background-color: rgba(126, 179, 240, 0.623);
+    color:rgba(30, 30, 238, 0.904);
+    }
+    .btn-remove{
+    background-color: rgba(240, 96, 96, 0.486);
+    color: rgb(241, 48, 48);
+    }
+    table tbody tr td:nth-child(6){
+        align-items: center;
+    }
+    a{
+        text-decoration: none;
+    }
+    input[type="search"]{
+        border:none;
+        background-color:#e1e4e9;
+        border-radius: 3px;
+        padding: 8px 16px;
+    }
+    table thead tr th:first-child{
+        color:rgba(30, 30, 238, 0.904) !important;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    table thead tr th:first-child i{font-weight: 600;}
+    table thead tr th{
+        font-size: 14px;
+        font-weight: 700;
+        color: #b9b3b3 !important;
+        font-family: sans-serif;
+    }
+    table tbody tr td{
+        font-size: 14px;
+        font-weight: 600;
+        vertical-align:middle !important;
+    }
+    table tbody tr td span{
+        font-size: 13px;
+        font-weight: 500;
+        color:rgba(30, 30, 238, 0.904);
+    
+    }
+    table tbody tr td p{
+        margin: 0;
+
+    }
+
+
+    table tbody tr td:nth-child(6),table tbody tr td:nth-child(5){
+        color:blue;
+        
+        
+    }
+   
+    select{
+        border:none;
+        background-color: #e1e4e9;
+        padding:6px 9px;
+        border-radius: 3px;
+    }
+    
+    
+
+    
+    #open{
+        color: rgb(192, 7, 238);
+        background-color: rgb(214, 171, 223);
+        padding: 6px 10px;
+        font-size: 13px;   
+    }
+    table tbody tr td:nth-child(5){
+        align-items: center;
+    }
+    a{
+        text-decoration: none;
+    }
+    tbody, td, tfoot, th, thead tr{
+        border: none !important;
+    border-bottom: 1px solid rgb(224, 217, 217) !important;
+    }
+    b{
+        color: red;
+    }
+    #submit{
+        background-color: rgba(126, 179, 240, 0.623);
+        color:rgba(30, 30, 238, 0.904);
+    }
+    #cancel{
+        background-color: rgb(209, 207, 207 0.623);
+        color: gray;
+    }
+    .high-priority > td:nth-child(4) p,.low-priority > td:nth-child(4) p,.medium-priority > td:nth-child(4) p  {
+        background-color: rgba(243, 180, 180, 0.623);
+        color:rgba(238, 9, 9, 0.589);
+        padding: 6px 10px;
+        font-size: 13px;
+        display: inline;
+        border-radius: 10px;
+        
+    }
+    
+    .medium-priority > td:nth-child(4) p {
+        background-color: rgba(163, 170, 230, 0.623);
+    color: rgba(93, 115, 235, 0.589);
+    
+    }
+    
+    .low-priority > td:nth-child(4) p {
+        background-color: rgba(127, 216, 186, 0.623);
+        color: rgba(8, 150, 107, 0.589);
+        padding: 6px 10px;
+    font-size: 13px;
+    display: inline;
+    border-radius: 10px;
+    }
+
+
+
+
+
+
+    .pending-status > td:nth-child(8) p,.completed-status > td:nth-child(8) p,.progress-status >td:nth-child(8) p,.open-status > td:nth-child(8) p{
+      color: rgb(240, 182, 66);
+    background-color: rgb(245, 221, 141); 
+    padding: 6px 10px;
+    font-size: 13px;
+    display: inline;
+    border-radius: 10px;
+    /* margin-bottom: 0rem */
+    }
+    .progress-status >td:nth-child(8) p{
+        background-color: rgba(163, 170, 230, 0.623);
+    color: rgba(93, 115, 235, 0.589);
+
+    }
+    .completed-status > td:nth-child(8) p{
+        background-color: rgba(127, 216, 186, 0.623);
+        color: rgba(8, 150, 107, 0.589);
+       
+    }
+    .open-status > td:nth-child(8) p{
+        color: rgb(192, 7, 238);
+        background-color: rgb(214, 171, 223);
+    }
+    .form-control{
+        width:36%;
+        margin-left:38px;  
+    }
+    .border_left{
+        border-left: 1px solid gray;
+    }
+    .label_wid{
+        width:102px;
+    }
+   #closeissue{
+    margin-left:14px;
+    background-color: rgb(39, 209, 172);
+    width: 50px;
+    height: 25px;
+   }
+ 
+ .story-cell{
+color: blue;
+ }
+ .story-blue{
+    color: red;
+ }
